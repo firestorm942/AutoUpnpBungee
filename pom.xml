@@ -5,7 +5,6 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.lostplay</groupId>
     <artifactId>autoupnpbungee</artifactId>
-    <packaging>pom</packaging>
     <version>1.0</version>
     <repositories>
         <repository>
@@ -30,7 +29,7 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
-                    <finalName>AutoUpnp-bungee</finalName>
+                    <finalName>AutoUpnpBungee</finalName>
                     <archive>
                         <manifest>
                             <mainClass>Net.LostPlay.AutoUpnp.AutoUpnp</mainClass>
@@ -58,6 +57,14 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>*.*</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 
     <dependencies>
@@ -86,4 +93,5 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
 </project>

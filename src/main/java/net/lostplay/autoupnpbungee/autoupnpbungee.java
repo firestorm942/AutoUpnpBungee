@@ -14,8 +14,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 
-import static java.lang.String.format;
-
 public class autoupnpbungee
         extends Plugin
 {
@@ -43,6 +41,7 @@ public class autoupnpbungee
                 e.printStackTrace();
             }
         }
+        assert config != null;
         protocol = config.getString("settings.protocol");
         name = config.getString("settings.name");
         ip = config.getString("settings.ipaddress");
@@ -57,7 +56,7 @@ public class autoupnpbungee
 
     private void openPort(String ip, int port, String name, String protocol)
     {
-        getLogger().info(format("[AutoUpnp] Attempting to forward port."));
+        getLogger().info("[AutoUpnp] Attempting to forward port.");
         PortMapping mapping;
         UpnpService upnpService;
         if (protocol.equals("TCP")) {
